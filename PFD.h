@@ -1,11 +1,5 @@
-// --------------------------
-// projects/collatz/Collatz.h
-// Copyright (C) 2015
-// Glenn P. Downing
-// --------------------------
-
-#ifndef Collatz_h
-#define Collatz_h
+#ifndef pfd_h
+#define pfd_h
 
 // --------
 // includes
@@ -18,64 +12,43 @@
 using namespace std;
 
 // ------------
-// collatz_read
+// pfd_read
 // ------------
 
 /**
- * read two ints
- * @param s a string
+ * read the number tasks and number of rules
+ * @param is
  * @return a pair of ints, representing the beginning and end of a range, [i, j]
  */
-pair<int, int> collatz_read (const string& s);
+void pfd_read (const string& s);
 
 // ------------
-// collatz_eval
+// pfd_eval
 // ------------
 
 /**
- * @param i the beginning of the range, inclusive
- * @param j the end       of the range, inclusive
- * @return the max cycle length of the range [i, j]
+ *	Determine the order of the tasks
  */
-int collatz_eval (int i, int j);
+void pfd_eval ();
 
 // -------------
-// collatz_print
+// pfd_print
 // -------------
 
 /**
- * print three ints
+ * print the order of the tasks
  * @param w an ostream
- * @param i the beginning of the range, inclusive
- * @param j the end       of the range, inclusive
- * @param v the max cycle length
  */
-void collatz_print (ostream& w, int i, int j, int v);
+void pfd_print (ostream& w);
 
 // -------------
-// collatz_solve
+// pfd_solve
 // -------------
 
 /**
  * @param r an istream
  * @param w an ostream
  */
-void collatz_solve (istream& r, ostream& w);
+void pfd_solve (istream& r, ostream& w);
 
-// -------------
-// collatz_recurse
-// -------------
-
-/**
- * @param x an int
- * @return the cycle for a particular number
- */
-int collatz_recurse (int x);
-
-/**
- * @param x an int
- * @return the cycle for a particular number
- */
-int collatz_getTotal (int x);
-
-#endif // Collatz_h
+#endif // pfd_h
